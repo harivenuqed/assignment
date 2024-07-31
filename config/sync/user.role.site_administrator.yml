@@ -1,0 +1,23 @@
+uuid: 8ad03141-8844-4836-baa1-9d18f64447c1
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - node.type.page
+  module:
+    - node
+    - unicef_site_settings
+id: site_administrator
+label: 'Site Administrator'
+weight: 6
+is_admin: null
+permissions:
+  - 'administer site settings'
+  - 'create page content'
+  - 'delete any page content'
+  - 'delete own page content'
+  - 'delete page revisions'
+  - 'edit any page content'
+  - 'edit own page content'
+  - 'revert page revisions'
+  - 'view page revisions'

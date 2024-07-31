@@ -1,0 +1,11 @@
+.history
+vendor
+web/core
+web/.csslintrc
+web/.eslintignore
+web/.ht.router.php
+web/.eslintrc.json
+web/autoload.php
+web/sites/default/files
+web/sites/example.sites.php
+web/sites/example.settings.local.php

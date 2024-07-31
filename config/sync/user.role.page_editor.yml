@@ -1,0 +1,18 @@
+uuid: 439b25d2-0915-4025-8cd7-2572f51ace9f
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - node.type.page
+  module:
+    - node
+id: page_editor
+label: 'Page Editor'
+weight: 5
+is_admin: null
+permissions:
+  - 'delete any page content'
+  - 'delete own page content'
+  - 'delete page revisions'
+  - 'edit any page content'
+  - 'edit own page content'
