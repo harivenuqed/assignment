@@ -1,0 +1,7 @@
+unicef_site_settings.site_settings:
+  path: '/admin/config/instagram'
+  defaults:
+    _title: 'Site settings'
+    _form: 'Drupal\unicef_site_settings\Form\SiteSettingsForm'
+  requirements:
+    _permission: 'administer site settings'

@@ -1,0 +1,51 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for UNICEF Site Settings module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\Entity\Node;
+
+/**
+ * Implements hook_preprocess_HOOK() for html.html.twig.
+ *
+ * Adds a custom Instagram meta tag to the page head.
+ */
+function unicef_site_settings_preprocess_html(array &$variables) {
+
+  $instagramhandle = \Drupal::config('unicef_site_settings.settings')->get('instagram_handle');
+  // Add a custom Instagram meta tag.
+  $meta_tag = [
+    '#tag' => 'meta',
+    '#attributes' => [
+      'name' => 'instagram:site',
+      'content' => $instagramhandle,
+    ],
+  ];
+  // Add the meta tag to the head elements.
+  $variables['#attached']['html_head'][] = [$meta_tag, 'instagram_site'];
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function unicef_site_settings_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  // Check if the form ID is the node edit and add form for content type `page`.
+  if ($form_id === 'node_page_form' || $form_id === 'node_page_edit_form') {
+
+    $node = $form_state->getFormObject()->getEntity();
+
+    // Check if the entity is indeed a node.
+    if ($node instanceof node) {
+      if ($node->hasField('field_teaser')) {
+        $current_user = \Drupal::currentUser();
+        $roles = $current_user->getRoles();
+        if (in_array('page_author', $roles)) {
+          $form['field_teaser']['#disabled'] = TRUE;
+        }
+      }
+    }
+  }
+}

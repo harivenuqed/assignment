@@ -1,0 +1,5 @@
+unicef_site_settings.site_settings:
+  title: Site settings
+  description: Site settings
+  route_name: unicef_site_settings.site_settings
+  weight: 10

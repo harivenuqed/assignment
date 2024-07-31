@@ -1,0 +1,8 @@
+# Schema for the configuration files of the Unicef site settings module.
+unicef_site_settings.settings:
+  type: config_object
+  label: 'Unicef site settings settings'
+  mapping:
+    example:
+      type: string
+      label: 'Example'

@@ -1,0 +1,4 @@
+administer site settings:
+  title: 'Site Settings'
+  description: 'Allows users to access the site settings page.'
+  restrict access: TRUE
